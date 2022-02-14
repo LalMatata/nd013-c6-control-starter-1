@@ -290,8 +290,8 @@ int main ()
                  /**
          * TODO (step 3): uncomment these lines
          **/
-                 //           // Update the delta time with the previous command
-                 //           pid_steer.UpdateDeltaTime(new_delta_time);
+                 // Update the delta time with the previous command
+                 pid_steer.UpdateDeltaTime(new_delta_time);
 
                  // Compute steer error
                  double error_steer;
@@ -307,18 +307,18 @@ int main ()
                  /**
          * TODO (step 3): uncomment these lines
          **/
-                 //           // Compute control to apply
-                 //           pid_steer.UpdateError(error_steer);
-                 //           steer_output = pid_steer.TotalError();
+                 // Compute control to apply
+                 pid_steer.UpdateError(error_steer);
+                 steer_output = pid_steer.TotalError();
 
-                 //           // Save data
-                 //           file_steer.seekg(std::ios::beg);
-                 //           for(int j=0; j < i - 1; ++j) {
-                 //               file_steer.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                 //           }
-                 //           file_steer  << i ;
-                 //           file_steer  << " " << error_steer;
-                 //           file_steer  << " " << steer_output << endl;
+                 // Save data
+                 file_steer.seekg(std::ios::beg);
+                 for(int j=0; j < i - 1; ++j) {
+                     file_steer.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                 }
+                 file_steer  << i ;
+                 file_steer  << " " << error_steer;
+                 file_steer  << " " << steer_output << endl;
 
                  ////////////////////////////////////////
                  // Throttle control
@@ -327,8 +327,8 @@ int main ()
                  /**
          * TODO (step 2): uncomment these lines
          **/
-                 //           // Update the delta time with the previous command
-                 //           pid_throttle.UpdateDeltaTime(new_delta_time);
+                 // Update the delta time with the previous command
+                 pid_throttle.UpdateDeltaTime(new_delta_time);
 
                  // Compute error of speed
                  double error_throttle;
@@ -346,28 +346,28 @@ int main ()
                  /**
          * TODO (step 2): uncomment these lines
          **/
-                 //           // Compute control to apply
-                 //           pid_throttle.UpdateError(error_throttle);
-                 //           double throttle = pid_throttle.TotalError();
+                 // Compute control to apply
+                 pid_throttle.UpdateError(error_throttle);
+                 double throttle = pid_throttle.TotalError();
 
-                 //           // Adapt the negative throttle to break
-                 //           if (throttle > 0.0) {
-                 //             throttle_output = throttle;
-                 //             brake_output = 0;
-                 //           } else {
-                 //             throttle_output = 0;
-                 //             brake_output = -throttle;
-                 //           }
+                 // Adapt the negative throttle to break
+                 if (throttle > 0.0) {
+                   throttle_output = throttle;
+                   brake_output = 0;
+                 } else {
+                   throttle_output = 0;
+                   brake_output = -throttle;
+                 }
 
-                 //           // Save data
-                 //           file_throttle.seekg(std::ios::beg);
-                 //           for(int j=0; j < i - 1; ++j){
-                 //               file_throttle.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                 //           }
-                 //           file_throttle  << i ;
-                 //           file_throttle  << " " << error_throttle;
-                 //           file_throttle  << " " << brake_output;
-                 //           file_throttle  << " " << throttle_output << endl;
+                 // Save data
+                 file_throttle.seekg(std::ios::beg);
+                 for(int j=0; j < i - 1; ++j){
+                     file_throttle.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                 }
+                 file_throttle  << i ;
+                 file_throttle  << " " << error_throttle;
+                 file_throttle  << " " << brake_output;
+                 file_throttle  << " " << throttle_output << endl;
 
 
                  // Send control
