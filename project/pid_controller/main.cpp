@@ -338,7 +338,7 @@ int main ()
           **/
           // modify the following line for step 2
           //The last point of v_points vector contains the velocity computed by the path planner.
-          error_throttle = v_points[0] - velocity;
+          error_throttle = v_points[1] - velocity;
 
           double throttle_output;
           double brake_output;
