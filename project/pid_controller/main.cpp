@@ -304,7 +304,6 @@ int main ()
           * TODO (step 3): compute the steer error (error_steer) from the position and the desired trajectory
           **/
           error_steer = 0;
-          steer_output = 0;
 
           /**
           * TODO (step 3): uncomment these lines
