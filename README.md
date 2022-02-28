@@ -105,7 +105,6 @@ pip3 install matplotlib
 
 PID (proportional integral derivative) controllers use a control loop feedback mechanism to control process variables. While optimizing the PID parameter, the optimal values were found by trying first the P, then the I and then the D values one by one. In the simulation, the reactions of the vehicle were monitored.
 
-
 ### Evaluation
 
 A PID controller is implemented and integrated into the provided framework for throttle and steering control. Several fixes are added to the framework and simulation client to make the control smoother and more stable. PID controller (proportional–integral–derivative controller) parameters are handled separately for steering and throttle. Errors are also calculated separately. I tuned the parameters for the PID by observing the responses. When calculating the error, the yaw angle of the vehicle and the closest x and y points to the vehicle in the simulation and where the vehicle is at x and y were taken as reference.
