@@ -35,11 +35,11 @@ void PID::Init(double Kpi, double Kii, double Kdi, double output_lim_maxi, doubl
 void PID::UpdateError(double cte) {
 
 //TODO: Update PID errors based on cte.
-
+    
     error_p = cte;
-    error_i = cte + error_i;
-    error_d = cte - error_p;
-
+    error_i = cte * deltaTime;
+    error_d = cte - error_p; / deltaTime;
+  
 }
 
 double PID::TotalError() {
