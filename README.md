@@ -114,11 +114,11 @@ A PID controller is implemented and integrated into the provided framework for t
 
 The following figure shows the values in case of the simulation, the reference speed is calculated by the behavior planner. The x axis shows iterations. It can be seen that it takes a long time to reach the desired speed (the controller is damped) and even despite this, some oscillation is clearly visible.  It can be seen that initially the error is reduced quickly (caused by the proportional term), but then the equalibrium is reached slowly - this is caused by the slow buildup of the integral term.
 
-![](project/pid_controller/screenshot/steer.png)
+![](project/pid_controller/screenshot/Figure_2.png)
 
 The Figure below shows the steering control error and its output in a scene with obstacles. There are three parts in the timeline where the error is huge, these are the 3 moments when the car runs through obstacles and has to change lanes. Part of the error here may be due to latency or other incompatibilities between the controller and simulation - for example, the root cause may be that the controller is planning too far ahead (takes the last waypoint).
 
-![](project/pid_controller/screenshot/throttle.png)
+![](project/pid_controller/screenshot/Figure_3.png)
 
 ### Questions
 
