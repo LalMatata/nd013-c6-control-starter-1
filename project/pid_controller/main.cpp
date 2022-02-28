@@ -295,13 +295,18 @@ int main ()
 
                  // Compute steer error
                  double error_steer;
-
+                 double angle = angle_between_points(x_points[x_points.size() -2], y_points[y_points.size() -2], x_points[x_points.size() -1], y_points[y_points.size() -1]);
+                 error_steer =  angle - yaw;
 
                  double steer_output;
 
                  /**
          * TODO (step 3): compute the steer error (error_steer) from the position and the desired trajectory
          **/
+         /**
+         * TODO (step 3): BURAYA YAZ
+         **/
+
                  //           error_steer = 0;
 
                  /**
@@ -335,8 +340,15 @@ int main ()
                  /**
          * TODO (step 2): compute the throttle error (error_throttle) from the position and the desired speed
          **/
+
+         /**
+         * TODO (step 3): BURAYA YAZ
+         **/
                  // modify the following line for step 2
                  error_throttle = 0;
+                 //           error_throttle =  velocity - v_points[i];
+                 error_throttle = v_points[v_points.size()-1] - velocity;
+                 //           error_throttle =   velocity - v_points[v_points.size()-1];
 
 
 
