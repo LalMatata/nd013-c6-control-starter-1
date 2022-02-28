@@ -105,8 +105,6 @@ pip3 install matplotlib
 
 PID (proportional integral derivative) controllers use a control loop feedback mechanism to control process variables. While optimizing the PID parameter, the optimal values were found by trying first the P, then the I and then the D values one by one. In the simulation, the reactions of the vehicle were monitored.
 
-Due to insufficient hardware for simulation, an application was developed on the remote desktop provided by UDACITY. The results are given below. </br>
-[pid_test](https://www.youtube.com/watch?v=PPTg27vqDOs&ab_channel=MelikeTanr%C4%B1kulu "pid")
 
 ### Evaluation
 
