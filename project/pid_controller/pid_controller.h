@@ -13,39 +13,59 @@ public:
    /**
    * TODO: Create the PID class
    **/
-//errors
-    double error_p;
-    double error_i;
-    double error_d;
 
-//Coefficients
-      double coef_p;
-      double coef_i;
-      double coef_d;
-
-//Output limits
-    double lim_max;
-    double lim_min;
+    /*
+    * Errors
+    */
+	double error_p;
+  	double error_i;
+  	double error_d;
+  	double error_pp;
+    /*
+    * Coefficients
+    */
+	double coef_p;
+  	double coef_i;
+  	double coef_d;
+    /*
+    * Output limits
+    */
+  	double limit_max;
+  	double limit_min;
+ 
   
-//Delta time
-    double delt;
-
-//Constructor
+    /*
+    * Delta time
+    */
+	double delta;
+    /*
+    * Constructor
+    */
     PID();
 
-//Destructor.
+    /*
+    * Destructor.
+    */
     virtual ~PID();
 
-//Initialize PID.
+    /*
+    * Initialize PID.
+    */
     void Init(double Kp, double Ki, double Kd, double output_lim_max, double output_lim_min);
 
-//Update the PID error variables given cross track error.
+    /*
+    * Update the PID error variables given cross track error.
+    */
     void UpdateError(double cte);
 
-//Calculate the total PID error.
+    /*
+    * Calculate the total PID error.
+    */
     double TotalError();
-
-//Update the delta time.
+  
+    /*
+    * Update the delta time.
+    */
     double UpdateDeltaTime(double new_delta_time);
 };
 
